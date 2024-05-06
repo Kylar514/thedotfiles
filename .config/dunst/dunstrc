@@ -1,0 +1,52 @@
+# Dunstrc here
+[global]
+    monitor = 0
+    follow = keyboard
+    font = HackNerdFont, Regular:26
+    idle_threshold = 120
+    ignore_dbusclose = true
+    width = 300
+    height = 300
+    origin = top-center
+    offset = 00x50
+    scale = 0
+    notification_limit = 20
+    highlight="#FF470A"
+    indicate_hidden = yes
+    transparency = 0
+    separator_height = 2
+    padding = 15
+    horizontal_padding = 15
+    text_icon_padding = 40
+    sort = yes
+    line_height = 0
+    markup = full
+    format = "<i>%s</i>\n%b"
+    alignment = left
+    vertical_alignment = center
+    ellipsize = middle
+    show_indicators = yes
+    corner_radius = 20
+    icon_corner_radius = 10
+    frame_width = 2
+    gap_size = 15
+    separator_color = frame
+    frame_color = "#000000"
+    icon_theme = "kora, breeze"
+    enable_recursive_icon_lookup = true
+[experimental]
+    per_monitor_dpi = false
+[urgency_low]
+    background = "#222222"
+    foreground = "#888888"
+    timeout = 20
+[urgency_normal]
+    background = "#011423c8"
+    foreground = "#ffffff"
+    frame_color = "#011423c8"
+    timeout = 20
+[urgency_critical]
+    background = "#900000"
+    foreground = "#ffffff"
+    frame_color = "#ff0000"
+    timeout = 0

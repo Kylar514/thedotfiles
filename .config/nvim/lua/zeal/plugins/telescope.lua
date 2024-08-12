@@ -22,6 +22,15 @@ return {
             ["<C-h>"] = require("telescope.builtin").hidden_files, --allows hidden files to be viewed
           },
         },
+        vimgrep_arguments = {
+          "rg",
+          "--hidden",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+        },
       },
     })
 

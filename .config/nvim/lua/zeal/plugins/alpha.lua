@@ -3,12 +3,15 @@ return {
   event = "VimEnter",
   config = function()
     local alpha = require("alpha")
+
     local dashboard = require("alpha.themes.dashboard")
     math.randomseed(os.time())
+
     local function pick_color()
       local colors = { "String", "Identifier", "Keyword", "Number" }
       return colors[math.random(#colors)]
     end
+
     local function footer()
       local datetime = os.date(" %m-%d-%Y   %I:%M:%p")
       local version = vim.version()

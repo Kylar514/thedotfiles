@@ -1,0 +1,14 @@
+output=*
+font=Hack Nerd Font 13
+width=300
+padding=15
+margin=50
+border-size=2
+border-color=#000000
+border-radius=20
+max-visible=20
+text-alignment=left
+anchor=top-center
+background-color=#011423c8
+text-color=#ffffff
+border-color=#011423c8

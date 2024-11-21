@@ -8,6 +8,7 @@ return {
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
     local mason_tool_installer = require("mason-tool-installer")
+    local lspconfig = require("lspconfig")
 
     mason.setup({
       ui = {
@@ -19,9 +20,11 @@ return {
       },
     })
 
+    lspconfig["ts_ls"].setup({})
+
     mason_lspconfig.setup({
       ensure_installed = {
-        "tsserver",
+        "ts_ls",
         "html",
         "cssls",
         "tailwindcss",

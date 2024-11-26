@@ -7,7 +7,7 @@ opt.relativenumber = true
 opt.number = true
 
 --tab & indentation
-opt.tabstop = 2  --set tab equal to x amount of spaces
+opt.tabstop = 2 --set tab equal to x amount of spaces
 opt.shiftwidth = 2 --set indent equal to x amount of spaces
 opt.expandtab = true --set tab to spaces
 opt.autoindent = true --set whether indent from current line will carry to next line
@@ -35,5 +35,3 @@ opt.clipboard:append("unnamedplus") --use system clipboard as default register
 --split windows
 opt.splitright = true
 opt.splitbelow = true
-
-

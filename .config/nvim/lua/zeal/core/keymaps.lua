@@ -34,7 +34,7 @@ keymap.set({ "n" }, "<leader>bp", ":bprev<CR>", { desc = "Previous buffer" })
 keymap.set({ "n" }, "<leader>bx", ":bdelete<CR>", { desc = "Close current buffer" })
 keymap.set({ "n" }, "<leader>bw", ":bwipeout<CR>", { desc = "Wipe out current buffer" })
 
--- -- folds
+-- folds
 vim.keymap.set("n", "<CR>", function()
   local line = vim.fn.line(".")
   local foldlevel = vim.fn.foldlevel(line)

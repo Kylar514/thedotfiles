@@ -15,7 +15,12 @@ return {
         html = { "prettier" },
         json = { "prettier" },
         yaml = { "prettier" },
-        markdown = { "prettier" },
+        markdown = {
+          {
+            command = "prettier",
+            args = { "--print-width", "100" },
+          },
+        },
         graphql = { "prettier" },
         liquid = { "prettier" },
         lua = { "stylua" },

@@ -6,21 +6,21 @@ return {
     "windwp/nvim-ts-autotag",
   },
   config = function()
-    -- import nvim-treesitter plugin
+    -- Import the treesitter plugin
     local treesitter = require("nvim-treesitter.configs")
 
-    -- configure treesitter
+    -- Configure treesitter
     treesitter.setup({
       highlight = {
         enable = true,
       },
-      -- enable indentation
       indent = { enable = true },
-      -- enable autotagging (w/ nvim-ts-autotag plugin)
       autotag = {
         enable = true,
       },
-      -- ensure these language parsers are installed
+      folding = {
+        enable = true, -- Enable folding
+      },
       ensure_installed = {
         "json",
         "javascript",
@@ -53,5 +53,9 @@ return {
         },
       },
     })
+
+    -- Set folding settings
+    vim.wo.foldmethod = "expr"
+    vim.wo.foldexpr = "nvim_treesitter#foldexpr()" -- Use Treesitter's built-in folding expression
   end,
 }

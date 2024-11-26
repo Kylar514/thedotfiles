@@ -12,7 +12,7 @@ return {
       { "<leader>e", group = "File tree" },
       { "<leader>f", group = "Telescope" },
       { "<leader>l", group = "Lazygit" },
-      { "<leader>m", group = "Formater" },
+      { "<leader>m", group = "Formater & markdown preview" },
       { "<leader>n", group = "Highlighting" },
       { "<leader>r", group = "LSP options" },
       { "<leader>s", group = "Window management" },

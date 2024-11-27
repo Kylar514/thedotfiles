@@ -128,6 +128,8 @@ alias dec='cal -m 12'
 alias snvim='sudo -e'
 alias mail='neomutt'
 
+alias on='cd Nextcloud/Obisian\ vault/'
+
 
 ####################################################
 ####################################################

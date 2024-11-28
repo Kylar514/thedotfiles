@@ -55,6 +55,9 @@ return {
         theme = my_lualine_theme,
       },
       sections = {
+        lualine_c = {
+          { "buffers" },
+        },
         lualine_x = {
           {
             lazy_status.updates,

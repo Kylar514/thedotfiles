@@ -5,8 +5,8 @@
 "margin-bottom":0,
 "margin-top":0,
 
-"modules-left": ["sway/mode","cpu","memory","network"],
-"modules-center": ["sway/workspaces","hyprland/workspaces"],
+"modules-left": ["custom/caps_state", "cpu","memory","network"],
+"modules-center": ["hyprland/workspaces"],
 "modules-right":  ["pulseaudio", "clock"],
 
 "hyprland/workspaces": {
@@ -30,9 +30,27 @@
 },
 "clock": {
     "locale": "C", 
-    "format": " {:%I:%M %p}",
-    "format-alt": " {:%a,%b %d}" // Icon: calendar-alt
-},
+    "format": " {:%I:%M %p   %a,%b %d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+                "mode"          : "month",
+                "mode-mon-col"  : 3,
+                "weeks-pos"     : "right",
+                "on-scroll"     : 1,
+                "format": {
+                          "months":     "<span color='#ffead3'><b>{}</b></span>",
+                          "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                          "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                          "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                          "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                          }
+                },
+    "actions":  {
+                "on-click-right": "mode",
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down"
+                }
+    },
 "cpu": {
     "format": "&#8239;{usage}%",
     "tooltip": false,
@@ -47,16 +65,13 @@
     "critical": 90
 },
 "network": {
-  "interval": 2,
-  "format-wifi": " {signalStrength}%",
-  "format-ethernet": "",
-  "format-linked": " {ipaddr}",
+  "interval": 3600,
+  "format-ethernet": " {ipaddr}",
   "format-disconnected": " Disconnected",
-  "format-disabled": "x",
   "tooltip": false,
   "max-length": 20,
   "min-length": 6,
-  "format-alt": "{essid}",
+  "on-click": "bash ~/thedotfiles/scripts/networkmenu.sh"
 },
 "idle_inhibitor": {
     "format": "{icon}",
@@ -89,7 +104,7 @@
     "car": "",
     "default": ["", "", ""]
   },
-  "on-click": "pavucontrol"
+  "on-click": "pwvucontrol"
 },
 "mpd": {
   "format": "{stateIcon} {artist} - {title}",
@@ -133,4 +148,10 @@
     "exec": "echo '{\"class\": \"audio recording\"}'",
     "exec-if": "pgrep ffmpeg",
 },
+"custom/capslock": {
+    "exec": "~/thedotfiles/scripts/caps_state.sh",
+    "interval": 1,
+    "return-type": "json"
+    },
+  },
 }

@@ -12,6 +12,12 @@ return {
     checkbox = {
       enabled = true,
       position = "inline",
+      unchecked = {
+        raw = "[ ]",
+        icon = "󰄱  Todo",
+        highlight = "RenderMarkdownUnchecked",
+        scope_highlight = nil,
+      },
       checked = {
         icon = "󰱒 󰚜 Done",
         highlight = "RenderMarkdownChecked",

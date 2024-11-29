@@ -18,6 +18,10 @@ elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
+#Keybinds
+bind '"\C-0": beginning-of-line'
+
+
 #Activate vi mode by default
 # set -o vi
 

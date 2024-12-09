@@ -1,68 +1,41 @@
-window {
-  /* border: 2px solid #414868; */
-  border: 2px solid
-    linear-gradient(45deg, rgba(51, 204, 238, 0.93), rgba(0, 255, 153, 0.93));
-  background-color: #24283b;
+* {
   font-family: Hack Nerd Font;
-  font-size: 16px;
-  /* box-shadow: */
-  /*   rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, */
-  /*   rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, */
-  /*   rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
-  background: rgba(1, 32, 56, 0.7);
-  border-radius: 10px;
-  backdrop-filter: blur 10px;
+  color: #e5e9f0;
+  background: transparent;
+}
+
+#window {
+  background: rgba(41, 46, 66, 0.8); /* Semi-transparent background */
+  margin: auto;
+  padding: 00px;
+  border-radius: 00px;
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg, #b072d1, #72d1d1) 9; /* Gradient border */
 }
 
 #input {
-  margin: 5px;
-  border: 1px solid #24283b;
-  color: #c0caf5;
-  background: rgba(1, 32, 56, 0.3);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
 }
-/**/
-/* #inner-box { */
-/*   margin: 10px; */
-/*   border: none; */
-/*   background-color: #24283b; */
-/*   box-shadow: */
-/*     rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, */
-/*     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, */
-/*     rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
-/*   background: rgba(1, 32, 56, 0.3); */
-/*   border-radius: 00px; */
-/* } */
 
 #outer-box {
-  margin: 10px;
-  border: none;
-  /* background-color: #24283b; */
-  /* box-shadow: */
-  /*   rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, */
-  /*   rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, */
-  /*   rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
-  /* background: rgba(36, 40, 59, 0.6); */
-  background: rgba(1, 32, 56, 0);
-  border-radius: 10px;
+  padding: 30px;
 }
 
-#scroll {
-  margin: 0px;
-  border: none;
+#img {
+  margin-right: 6px;
 }
 
-#text {
-  margin: 5px;
-  border: none;
-  color: #c0caf5;
+#entry {
+  padding: 10px;
+  border-radius: 15px;
 }
 
 #entry:selected {
-  background-color: #414868;
-  font-weight: normal;
+  background-color: #2e3440; /* Background color for selected entry */
 }
 
-#text:selected {
-  background-color: #414868;
-  font-weight: normal;
+#text {
+  margin: 2px;
 }

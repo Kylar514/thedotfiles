@@ -1,7 +1,7 @@
 {
 "layer": "top",
 "position": "top",
-"height": 10,
+"height": 0,
 "margin-bottom":0,
 "margin-top":0,
 
@@ -89,9 +89,9 @@
 },
 "pulseaudio": {
   // "scroll-step": 1, // %, can be a float
-  "format": "{icon} {volume}% {format_source}",
+  "format": "{icon}  {volume}% {format_source}",
   "format-bluetooth": "{icon} {volume}% {format_source}",
-  "format-bluetooth-muted": " {format_source}",
+  "format-bluetooth-muted": "  {format_source}",
   "format-muted": "  {format_source}",
   "format-source": " {volume}%",
   "format-source-muted": "",

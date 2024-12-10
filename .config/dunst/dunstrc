@@ -1,8 +1,7 @@
-# Dunstrc here
 [global]
     monitor = 0
     follow = keyboard
-    font = HackNerdFont, Regular:26
+    font = Hack Nerd Font, Regular:26
     idle_threshold = 120
     ignore_dbusclose = true
     width = 300
@@ -11,9 +10,9 @@
     offset = 00x50
     scale = 0
     notification_limit = 20
-    highlight="#FF470A"
+    highlight = "#33ccffee"  # Updated highlight color (hex format)
     indicate_hidden = yes
-    transparency = 0
+    transparency = 0.4  # Transparency, use appropriate value
     separator_height = 2
     padding = 15
     horizontal_padding = 15
@@ -26,25 +25,26 @@
     vertical_alignment = center
     ellipsize = middle
     show_indicators = yes
-    corner_radius = 20
-    icon_corner_radius = 10
+    corner_radius = 0  # Match sharp corners like Wofi
+    icon_corner_radius = 0  # Match sharp corners like Wofi
     frame_width = 2
     gap_size = 15
     separator_color = frame
-    frame_color = "#000000"
+    frame_color = "#21ccff66"  # Converted hex color with alpha (from rgba)
     icon_theme = "kora, breeze"
     enable_recursive_icon_lookup = true
-[experimental]
-    per_monitor_dpi = false
+
 [urgency_low]
-    background = "#222222"
+    background = "#2e3440"  # Use hex format for low urgency
     foreground = "#888888"
     timeout = 20
+
 [urgency_normal]
-    background = "#011423c8"
+    background = "#011423cc"  # Converted to hex
     foreground = "#ffffff"
-    frame_color = "#011423c8"
+    frame_color = "#21ccff66"  # Converted hex color with alpha
     timeout = 20
+
 [urgency_critical]
     background = "#900000"
     foreground = "#ffffff"

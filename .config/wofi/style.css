@@ -5,12 +5,17 @@
 }
 
 #window {
-  background: rgba(41, 46, 66, 0.8); /* Semi-transparent background */
+  background: rgba(1, 22, 40, 0.4); /* Semi-transparent background */
   margin: auto;
   padding: 00px;
-  border-radius: 00px;
+  border-radius: 0px;
   border: 2px solid transparent;
-  border-image: linear-gradient(45deg, #b072d1, #72d1d1) 9; /* Gradient border */
+  border-image: linear-gradient(
+      45deg,
+      rgba(33, 204, 255, 0.3),
+      rgba(0, 255, 153, 0.3)
+    )
+    1;
 }
 
 #input {
@@ -33,7 +38,7 @@
 }
 
 #entry:selected {
-  background-color: #2e3440; /* Background color for selected entry */
+  background-color: rgba(46, 52, 64, 0.2);
 }
 
 #text {

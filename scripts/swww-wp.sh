@@ -5,7 +5,7 @@ RIGHT_SCREEN_DIR="$HOME/Pictures/right screen"
 LEFT_SCREEN_OUTPUT="DP-2"
 RIGHT_SCREEN_OUTPUT="DP-3"
 TRANSITION_EFFECT="any"
-TIMER_INTERVAL=60
+TIMER_INTERVAL=45
 
 set_wallpaper() {
     local output=$1

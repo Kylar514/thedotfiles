@@ -5,7 +5,7 @@
 "margin-bottom":0,
 "margin-top":0,
 
-"modules-left": ["custom/caps_state", "cpu","memory","network"],
+"modules-left": ["custom/capslock", "cpu","memory","network"],
 "modules-center": ["hyprland/workspaces"],
 "modules-right":  ["pulseaudio", "clock"],
 
@@ -153,5 +153,14 @@
     "interval": 1,
     "return-type": "json"
     },
+"custom/capslock": {
+    "exec": "cat /tmp/caps_lock_state.txt",
+    "format": "{}",
+    "format-icons": {
+        "true": "󰪛",
+        "false": ""
+    },
+    "interval": 1
+},
   },
 }

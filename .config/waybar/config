@@ -7,7 +7,7 @@
 
 "modules-left": ["custom/capslock", "cpu","memory","network"],
 "modules-center": ["hyprland/workspaces"],
-"modules-right":  ["pulseaudio", "clock"],
+"modules-right":  ["mpd", "pulseaudio", "clock"],
 
 "hyprland/workspaces": {
      "sort-by-name": true,
@@ -89,16 +89,18 @@
 },
 "pulseaudio": {
   // "scroll-step": 1, // %, can be a float
-  "format": "{icon}  {volume}% {format_source}",
+  "format": "{icon} {volume}% {format_source}",
   "format-bluetooth": "{icon} {volume}% {format_source}",
   "format-bluetooth-muted": "  {format_source}",
   "format-muted": "  {format_source}",
   "format-source": " {volume}%",
   "format-source-muted": "",
   "format-icons": {
+    "alsa_output.usb-SteelSeries_Arctis_Nova_Pro_Wireless-00.analog-stereo": "󰋋",
+    "alsa_output.pci-0000_00_1f.3.analog-stereo": "󰓃",
     "headphone": "",
-    "hands-free": "",
     "headset": "🎧",
+    "speaker": "󰓃",
     "phone": "",
     "portable": "",
     "car": "",
@@ -107,30 +109,28 @@
   "on-click": "pwvucontrol"
 },
 "mpd": {
-  "format": "{stateIcon} {artist} - {title}",
-  "format-disconnected": "🎶",
-  "format-stopped": "♪",
-  "interval": 10,
-  "consume-icons": {
-    "on": " " // Icon shows only when "consume" is on
-  },
-  "random-icons": {
-    "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
-    "on": " "
-  },
-  "repeat-icons": {
-    "on": " "
-  },
-  "single-icons": {
-    "on": "1 "
-  },
-  "state-icons": {
-    "paused": "",
-    "playing": ""
-  },
-  "tooltip-format": "MPD (connected)",
-  "tooltip-format-disconnected": "MPD (disconnected)",
-  "max-length": 35
+    "format": "{stateIcon} {randomIcon}{repeatIcon}{singleIcon} {filename} - ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "interval": 10,
+    "max-length": 100,
+    "consume-icons": {
+        "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+        "on": " "
+    },
+    "repeat-icons": {
+        "on": " "
+    },
+    "single-icons": {
+        "on": "1 "
+    },
+    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
 },
 "custom/recorder": {
     "format": " Rec",
@@ -153,6 +153,24 @@
     "interval": 1,
     "return-type": "json"
     },
+"wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 14,
+    "icon-theme": "Numix-Circle",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+       "Alacritty"
+    ],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    },
+    "rewrite": {
+        "Firefox Web Browser": "Firefox",
+        "Foot Server": "Terminal"
+    }
+},
 "custom/capslock": {
     "exec": "cat /tmp/caps_lock_state.txt",
     "format": "{}",

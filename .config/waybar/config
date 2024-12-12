@@ -5,7 +5,7 @@
 "margin-bottom":0,
 "margin-top":0,
 
-"modules-left": ["custom/capslock", "cpu","memory","network"],
+"modules-left": ["custom/capslock", "cpu","memory","network", "custom/recorder"],
 "modules-center": ["hyprland/workspaces"],
 "modules-right":  ["mpd", "pulseaudio", "clock"],
 
@@ -73,20 +73,6 @@
   "min-length": 6,
   "on-click": "bash ~/thedotfiles/scripts/networkmenu.sh"
 },
-"idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-        "activated": "",
-        "deactivated": ""
-    }
-},
-"backlight": {
-    // "device": "acpi_video1",
-    "format": "{icon}&#8239;{percent}%",
-    "format-icons": ["", ""],
-    "on-scroll-down": "brightnessctl -c backlight set 1%-",
-    "on-scroll-up": "brightnessctl -c backlight set +1%"
-},
 "pulseaudio": {
   // "scroll-step": 1, // %, can be a float
   "format": "{icon} {volume}% {format_source}",
@@ -98,18 +84,12 @@
   "format-icons": {
     "alsa_output.usb-SteelSeries_Arctis_Nova_Pro_Wireless-00.analog-stereo": "󰋋",
     "alsa_output.pci-0000_00_1f.3.analog-stereo": "󰓃",
-    "headphone": "",
-    "headset": "🎧",
-    "speaker": "󰓃",
-    "phone": "",
-    "portable": "",
-    "car": "",
     "default": ["", "", ""]
   },
   "on-click": "pwvucontrol"
 },
 "mpd": {
-    "format": "{stateIcon} {randomIcon}{repeatIcon}{singleIcon} {filename} - ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    "format": "{stateIcon} {randomIcon}{repeatIcon}{singleIcon}| {elapsedTime:%M:%S}/{totalTime:%M:%S} | {filename}",
     "format-disconnected": "Disconnected ",
     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
     "interval": 10,
@@ -118,11 +98,10 @@
         "on": " " // Icon shows only when "consume" is on
     },
     "random-icons": {
-        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
-        "on": " "
+        "on": "<span color=\"#f53c3c\"></span> ",
     },
     "repeat-icons": {
-        "on": " "
+        "on": "<span color=\"#f53c3c\"></span> ",
     },
     "single-icons": {
         "on": "1 "
@@ -138,7 +117,7 @@
     "return-type": "json",
     "interval": 1,
     "exec": "echo '{\"class\": \"recording\"}'",
-    "exec-if": "pgrep wf-recorder",
+    "exec-if": "pgrep -l obs-ffmpeg-mux",
 },
 "custom/audiorec": {
     "format": "♬ Rec",
@@ -148,37 +127,10 @@
     "exec": "echo '{\"class\": \"audio recording\"}'",
     "exec-if": "pgrep ffmpeg",
 },
-"custom/capslock": {
-    "exec": "~/thedotfiles/scripts/caps_state.sh",
-    "interval": 1,
-    "return-type": "json"
-    },
-"wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 14,
-    "icon-theme": "Numix-Circle",
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": [
-       "Alacritty"
-    ],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
-    },
-    "rewrite": {
-        "Firefox Web Browser": "Firefox",
-        "Foot Server": "Terminal"
-    }
-},
-"custom/capslock": {
+  "custom/capslock": {
     "exec": "cat /tmp/caps_lock_state.txt",
-    "format": "{}",
-    "format-icons": {
-        "true": "󰪛",
-        "false": ""
-    },
+    "format": "<span color=\"#f53c3c\">{}</span>",
     "interval": 1
-},
   },
 }
+

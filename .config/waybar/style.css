@@ -56,7 +56,6 @@ window#waybar {
 }
 
 #workspaces button.active {
-  /* background: rgba(1, 22, 40, 0.4); */
   border-color: #9ece6a;
   border-radius: 90;
   padding: 0px 0px;
@@ -66,31 +65,6 @@ window#waybar {
   color: #7aa2f7;
 }
 
-/* #clock, */
-/* #battery, */
-/* #cpu, */
-/* #memory, */
-/* #idle_inhibitor, */
-/* #temperature, */
-/* #custom-keyboard-layout, */
-/* #backlight, */
-/* #network, */
-/* #pulseaudio, */
-/* #mode, */
-/* #tray, */
-/* #window, */
-/* #custom-launcher, */
-/* #custom-power, */
-/* #custom-pacman { */
-/*   padding: 0 3px; */
-/*   border-bottom: 2px; */
-/*   border-style: solid; */
-/* } */
-/**/
-/* -----------------------------------------------------------------------------
- * Module styles
- * -------------------------------------------------------------------------- */
-/**/
 #clock {
   background: rgba(1, 22, 40, 0.6);
   border-radius: 90px;

@@ -19,7 +19,7 @@ resize() {
     local width="$1"
     local height="$2"
     local window="$3"
-    hyprctl dispatch resizewindowpixel exact "$width" "$height","$window"
+    hyprctl dispatch resizewindowpixel exact "$width" "$height",class:"$window"
 }
 
 kitty &

@@ -8,6 +8,17 @@ return {
   config = function()
     -- Import the treesitter plugin
     local treesitter = require("nvim-treesitter.configs")
+    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+    --Parser config
+    parser_config.blade = {
+      install_info = {
+        url = "https://github.com/EmranMR/tree-sitter-blade",
+        files = { "src/parser.c" },
+        branch = "main",
+      },
+      filetype = "blade",
+    }
 
     -- Configure treesitter
     treesitter.setup({
@@ -22,6 +33,7 @@ return {
         enable = true, -- Enable folding
       },
       ensure_installed = {
+        "blade",
         "json",
         "javascript",
         "typescript",
@@ -42,6 +54,8 @@ return {
         "query",
         "vimdoc",
         "c",
+        "php",
+        "php_only",
       },
       incremental_selection = {
         enable = true,

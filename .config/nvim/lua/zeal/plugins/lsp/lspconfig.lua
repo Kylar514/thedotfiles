@@ -131,6 +131,12 @@ return {
           },
         })
       end,
+      ["intelephense"] = function()
+        lspconfig["intelephense"].setup({
+          capabilities = capabilities,
+          on_attach = function(client, bufnr) end,
+        })
+      end,
     })
   end,
 }
